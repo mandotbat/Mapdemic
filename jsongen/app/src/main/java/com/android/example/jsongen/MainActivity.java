@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generate(View view) {
+        Random r = new Random();
         ArrayList<jsonclass> list = new ArrayList<>();
         for(int i=0;i<Integer.valueOf(times.getText().toString());i++) {
             int h, d;
@@ -41,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             d = r.nextInt()%6;
             if(d<0)
                 d=d*(-1);
-            list.add(new jsonclass(hosp[h],disease[d], coords[h].getLatitude(), coords[h].getLongitude()));
+            list.add(new jsonclass(hosp[h],disease[d], coords[h].getLatitude(), coords[h].getLongitude(), r));
         }
 
         json.setText(x.toJson(list));
