@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void createMap() {
         CameraPosition cameraPosition = map.getCameraPosition();
-        if(cameraPosition.zoom <= 5) {
+        if(cameraPosition.zoom <= 8) {
             if(heatmapOverlay!=null){
                 heatmapOverlay.setVisible(false);
                 heatmapOverlay=null;
@@ -198,7 +198,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         HeatmapTileProvider heatmapProvider;
         heatmapProvider = new HeatmapTileProvider.Builder().data(locations).build();
-        heatmapProvider.setRadius(40);
+        heatmapProvider.setRadius(30);
         heatmapOverlay = map.addTileOverlay(new TileOverlayOptions().tileProvider(heatmapProvider));
     }
 
