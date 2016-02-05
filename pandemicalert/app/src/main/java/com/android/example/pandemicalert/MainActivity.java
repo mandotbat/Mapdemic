@@ -137,12 +137,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 createMap();
             }
         });
-        map.animateCamera(CameraUpdateFactory.newLatLng(delhi));
+        map.animateCamera(CameraUpdateFactory.newLatLngZoom(delhi, 7.0F));
     }
 
     private void createMap() {
         CameraPosition cameraPosition = map.getCameraPosition();
-        if(cameraPosition.zoom <= 8) {
+        if(cameraPosition.zoom <= 8.0F) {
             if(heatmapOverlay!=null){
                 heatmapOverlay.setVisible(false);
                 heatmapOverlay=null;
